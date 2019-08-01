@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admincp','middleware'=>'adminLogin'],function (){
 
     Route::resource('producttype','ProductTypeController');
     Route::get('show_producttype','ProductTypeController@showView');
-    route::get('search','ProductTypeController@timkiem');
+    Route::post('timkiem','Controller@timkiem');
 
 
 
@@ -55,4 +55,4 @@ Route::post('login','UserController@PostloginAdmin')->name('getlogin');
 Route::get('logout','UserController@GetlogoutAdmin')->name('getlogout');
 
 
-Route::post('timkiem','Controller@timkiem');
+
