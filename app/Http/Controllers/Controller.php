@@ -20,13 +20,7 @@ class Controller extends BaseController
 //        }
 //    }
 
-    function timkiem(Requets $requets)
-    {
-        $tukhoa = $requets->tukhoa;
-        $productype = ProducType::where('name','like',"%$tukhoa%")
-            ->take(5);
-        return view('admin.search',['productype'=>$productype,'tukhoa'=>$tukhoa]);
-    }
+
 
 
 }

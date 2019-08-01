@@ -27,7 +27,7 @@
 
                     </tbody>
                 </table>
-                                <div class="pull-right">{{ $producttype->links() }}</div>
+
             </div>
         </div>
     </div>

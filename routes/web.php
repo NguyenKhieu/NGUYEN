@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admincp','middleware'=>'adminLogin'],function (){
 
     Route::resource('producttype','ProductTypeController');
     Route::get('show_producttype','ProductTypeController@showView');
-    Route::post('timkiem','Controller@timkiem');
+    Route::post('timkiem','CategoryController@timkiem');
 
 
 

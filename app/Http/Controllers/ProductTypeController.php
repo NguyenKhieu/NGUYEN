@@ -9,9 +9,8 @@ class ProductTypeController extends Controller
 {
     public function showView()
     {
-        $producttype = ProductType::paginate(100);
+        $producttype = ProductType::all();
         $category = Categories::all();
-
         return response()->json(['producttype'=>$producttype,'category'=>$category]);
 
     }
@@ -22,8 +21,8 @@ class ProductTypeController extends Controller
      */
     public function index()
     {
-        $producttype = ProductType::paginate(5);
-        return view('admin.pages.producttype.list',compact('producttype'));
+
+        return view('admin.pages.producttype.list');
     }
     /**
      * Show the form for creating a new resource.

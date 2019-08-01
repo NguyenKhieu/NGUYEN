@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use App\Category;
 use Illuminate\Http\Request;
 use App\Models\Categories;
+use App\Models\ProductType;
 use App\Http\Requests\StoreCategoryRequest;
 use Validator;
 
@@ -112,5 +113,12 @@ class CategoryController extends Controller
         $category->delete();
 
         return response()->json(['success' => 'Delete success']);
+    }
+    public function timkiem(Request $requets)
+    {
+        $tukhoa = $requets->tukhoa;
+        $producttype = ProductType::where('name','like',"%$tukhoa%")
+            ->take(5)->get();
+        return view('admin.search',['producttype'=>$producttype,'tukhoa'=>$tukhoa]);
     }
 }

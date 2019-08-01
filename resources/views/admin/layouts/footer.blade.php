@@ -49,10 +49,10 @@
 <script src="assets/admin/js/sb-admin-2.min.js"></script>
 <script src="assets/admin/js/ajax.js"></script>
 <script src="assets/admin/js/toastr.min.js"></script>
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-<script type="text/javascript">
-    CKEDITOR.replace( 'demo' );
-</script>
+{{--<script type="text/javascript" src="ckeditor/ckeditor.js"></script>--}}
+{{--<script type="text/javascript">--}}
+{{--    CKEDITOR.replace( 'demo' );--}}
+{{--</script>--}}
 @if(session('thongbao'))
     <script type="text/javascript">
         toastr.success('{{ session('thongbao') }}', 'Thông báo', {timeOut: 5000});

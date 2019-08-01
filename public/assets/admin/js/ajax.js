@@ -125,11 +125,11 @@ jQuery(document).ready(function ($) {
             type: 'get',
             dataType: 'json',
             success: function (result) {
-
+                console.log(result);
                 $('#producttype-crud').empty();
                 $.each(result.producttype.data, function (key, value) {
                     var category = result.category.filter(function (check) {
-                        return check.id == value.id_producttype;
+                        return check.id == value.idCategory;
                     })
 
                     var status = (value.status == 1) ? 'Hiện thị' : 'Không hiển thị'
