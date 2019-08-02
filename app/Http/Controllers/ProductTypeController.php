@@ -21,7 +21,6 @@ class ProductTypeController extends Controller
      */
     public function index()
     {
-
         return view('admin.pages.producttype.list');
     }
     /**
@@ -32,6 +31,7 @@ class ProductTypeController extends Controller
     public function create()
     {
         $category = Categories::where('status',1)->get();
+
         return view('admin.pages.producttype.add',compact('category'));
     }
     /**

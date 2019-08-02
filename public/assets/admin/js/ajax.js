@@ -132,7 +132,7 @@ jQuery(document).ready(function ($) {
                         return check.id == value.idCategory;
                     })
 
-                    var status = (value.status == 1) ? 'Hiện thị' : 'Không hiển thị'
+                    var status = (value.status == 1) ? 'Hiển thị' : 'Không hiển thị'
                     var object = `<tr>
 		                        <td>` + value.id + `</td>
 		                        <td>` + value.name + `</td>
@@ -146,7 +146,9 @@ jQuery(document).ready(function ($) {
 		                        </td>
 		                    </tr>`
                     $('#producttype-crud').append(object);
+                    console.log(key);
                 });
+
             }
         });
     }

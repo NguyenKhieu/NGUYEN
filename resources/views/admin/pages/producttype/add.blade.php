@@ -1,13 +1,13 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Thêm loại sản phẩm
+    Add Product Type
 @endsection
 
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Loại sản phẩm</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Product Type</h6>
         </div>
         <div class="row" style="margin: 5px">
             <div class="col-lg-12">
@@ -31,12 +31,12 @@
                     <div class="form-group">
                         <label>Status</label>
                         <select class="form-control" name="status">
-                            <option value="1">Hiển Thị</option>
-                            <option value="0">Không Hiển Thị</option>
+                            <option value="1">Display</option>
+                            <option value="0">No Display</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-success">Thêm</button>
-                    <button type="reset" class="btn btn-primary">Nhập Lại</button>
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-primary">Add reset</button>
                 </form>
             </div>
         </div>

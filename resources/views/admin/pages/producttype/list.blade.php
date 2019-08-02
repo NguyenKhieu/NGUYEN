@@ -1,29 +1,30 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Danh sách loại sản phẩm
+    List Product Type
 @endsection
 
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Loại Sản Phẩm</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Product Type</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%">
                     <thead>
                     <tr>
-                        <th>STT</th>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Slug</th>
                         <th>Category</th>
                         <th>Status</th>
-                        <th>Chỉnh sửa</th>
+                        <th>Options</th>
                     </tr>
                     </thead>
 
                     <tbody id="producttype-crud">
+
 
                     </tbody>
                 </table>
@@ -37,7 +38,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa category <span class="title"></span></h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit category <span class="title"></span></h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -58,8 +59,8 @@
                                 <div class="form-group">
                                     <label>Status</label>
                                     <select class="form-control" name="status">
-                                        <option value="1" class="ht">Hiển Thị</option>
-                                        <option value="0" class="kht">Không Hiển Thị</option>
+                                        <option value="1" class="ht">Display</option>
+                                        <option value="0" class="kht">No Display</option>
                                     </select>
                                 </div>
                             </form>
@@ -68,7 +69,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success updateProductType">Save</button>
-                    <button type="reset" class="btn btn-primary">Làm Lại</button>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
@@ -80,14 +80,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Bạn có muốn xóa ?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Do you want to delete?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body" style="margin-left: 183px;">
-                    <button type="button" class="btn btn-success delProductType">Có</button>
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Không</button>
+                    <button type="button" class="btn btn-success delProductType">Yes</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
                 </div>
             </div>
         </div>
