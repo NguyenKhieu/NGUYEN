@@ -117,19 +117,16 @@ jQuery(document).ready(function ($) {
 
 // ProductType
 
-
-
     function showProductType() {
         $.ajax({
-            url: 'admincp/show_producttype',
+            url: 'admin/show_producttype',
             type: 'get',
             dataType: 'json',
             success: function (result) {
-
                 $('#producttype-crud').empty();
-                $.each(result.producttype.data, function (key, value) {
+                $.each(result.productType.data, function (key, value) {
                     var category = result.category.filter(function (check) {
-                        return check.id == value.id_producttype;
+                        return check.id == value.id_category;
                     })
 
                     var status = (value.status == 1) ? 'Hiện thị' : 'Không hiển thị'
@@ -140,16 +137,48 @@ jQuery(document).ready(function ($) {
 		                        <td>` + category[0].name + `</td>
 		                        <td>` + status + `
 		                        </td>
-		                        <td>
+		                       	<td>
 		                        	<button class="btn btn-primary editProductType" title="Sửa + value.name +"data-toggle="modal" data-target="#editproducttype" type="button" data-id ="`+value.id+`"><i class="fas fa-edit" ></i></button>
-		                        	<button class="btn btn-danger deleteProductType" title="Xóa + value.name +"data-toggle="modal" data-target="#deleteproducttype" type="button" data-id ="`+value.id+`"><i class="fas fa-trash-alt" ></i></button>
+	 	                        	<button class="btn btn-danger deleteProductType" title="Xóa + value.name +"data-toggle="modal" data-target="#deleteproducttype" type="button" data-id ="`+value.id+`"><i class="fas fa-trash-alt" ></i></button>
 		                        </td>
 		                    </tr>`
-                    $('#producttype-crud').append(object);
+                    $('#productType-crud').append(object);
                 });
             }
         });
     }
+
+    // function showProductType() {
+    //     $.ajax({
+    //         url: 'admincp/show_producttype',
+    //         type: 'get',
+    //         dataType: 'json',
+    //         success: function (result) {
+    //
+    //             $('#producttype-crud').empty();
+    //             $.each(result.producttype.data, function (key, value) {
+    //                 var category = result.category.filter(function (check) {
+    //                     return check.id == value.id_producttype;
+    //                 })
+    //
+    //                 var status = (value.status == 1) ? 'Hiện thị' : 'Không hiển thị'
+    //                 var object = `<tr>
+	// 	                        <td>` + value.id + `</td>
+	// 	                        <td>` + value.name + `</td>
+	// 	                        <td>` + value.slug + `</td>
+	// 	                        <td>` + category[0].name + `</td>
+	// 	                        <td>` + status + `
+	// 	                        </td>
+	// 	                        <td>
+	// 	                        	<button class="btn btn-primary editProductType" title="Sửa + value.name +"data-toggle="modal" data-target="#editproducttype" type="button" data-id ="`+value.id+`"><i class="fas fa-edit" ></i></button>
+	// 	                        	<button class="btn btn-danger deleteProductType" title="Xóa + value.name +"data-toggle="modal" data-target="#deleteproducttype" type="button" data-id ="`+value.id+`"><i class="fas fa-trash-alt" ></i></button>
+	// 	                        </td>
+	// 	                    </tr>`
+    //                 $('#producttype-crud').append(object);
+    //             });
+    //         }
+    //     });
+    // }
 
     showProductType()
     $('body').on('click', '.editProductType', function () {
